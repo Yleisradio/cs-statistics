@@ -1,0 +1,128 @@
+[
+	{
+		"id": 1,
+		"start": "2015-06-08T12:35:51.947Z",
+		"end": "2015-06-08T12:39:51.947Z",
+		"teams": [
+			{
+				"score": 3,
+				"side": "t",
+				"name": "Team Testers",
+		        "players":[  
+		            {  
+		               "score":0,
+		               "id":20,
+		               "assists":1,
+		               "deaths":2,
+		               "name":"Tom",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
+		               "steamId": "0:1:123456789"
+		            },
+		            {  
+		               "score":8,
+		               "id":20,
+		               "assists":0,
+		               "deaths": 0,
+		               "name":"Shawn",
+		               "side":"t",
+		               "headshots":2,
+		               "kills":4,
+		               "steamId": "1:1:123456789"
+		            }
+		        ]
+			},
+			{
+				"score": 0,
+				"side": "ct",
+				"name": "Nameless",
+		        "players":[  
+		            {  
+		               "score":0,
+		               "id":20,
+		               "assists":1,
+		               "deaths":2,
+		               "name":"Chris",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
+		               "steamId": "0:1:123456789"
+		            },
+		            {  
+		               "score":8,
+		               "id":20,
+		               "assists":0,
+		               "deaths":2,
+		               "name":"John",
+		               "side":"t",
+		               "headshots":1,
+		               "kills":1,
+		               "steamId": "1:1:123456789"
+		            }
+		        ]
+			}
+		]
+	},
+	{
+		"id": 2,
+		"start": "2015-06-08T12:40:10.947Z",
+		"end": "2015-06-08T12:59:51.947Z",
+		"teams": [
+			{
+				"score": 5,
+				"side": "t",
+				"name": "Team Testers",
+		        "players":[  
+		            {  
+		               "score":7,
+		               "id":20,
+		               "assists":1,
+		               "deaths":3,
+		               "name":"Tom",
+		               "headshots":1,
+		               "kills":3,
+		               "steamId": "0:1:123456789"
+		            },
+		            {  
+		               "score":10,
+		               "id":20,
+		               "assists":2,
+		               "deaths": 2,
+		               "name":"Shawn",
+		               "headshots":3,
+		               "kills":4,
+		               "steamId": "1:1:123456789"
+		            }
+		        ]
+			},
+			{
+				"score": 1,
+				"side": "ct",
+				"name": "Nameless",
+		        "players":[  
+		            {  
+		               "score":0,
+		               "id":20,
+		               "assists":1,
+		               "deaths":5,
+		               "name":"Chris",
+		               "headshots":0,
+		               "kills":2,
+		               "steamId": "0:1:123456789"
+		            },
+		            {  
+		               "score":8,
+		               "id":20,
+		               "assists":0,
+		               "deaths":2,
+		               "name":"John",
+		               "headshots":1,
+		               "kills":3,
+		               "steamId": "1:1:123456789"
+		            }
+		        ]
+			}
+		]
+	}
+]
