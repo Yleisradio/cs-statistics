@@ -1,0 +1,79 @@
+body {
+	background-image: url('../img/background-placeholder.png');
+	background-size: cover;
+}
+
+.tv-container {
+	margin: 5%;
+	color: white;
+}
+
+#team-1-score, .tv-container #team-2-score {
+	font-size: 60px;
+}
+
+.table-wrapper {
+	background: black;
+	padding: 10px;
+}
+
+.table-wrapper .table {
+	margin: 0;
+}
+
+.tv-container .table th, .tv-container .table td {
+	text-align: center;
+}
+
+.table th {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.tv-container .table td {
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.table .name {
+	font-size: 30px;
+	line-height: 30px;
+	width: 400px;
+	text-align: left;
+}
+
+.t > thead > tr > th {
+  border-bottom: 2px solid rgba(255, 207, 48, 1);
+}
+
+.t > tbody > tr > td {
+  border-bottom: 1px solid rgba(255, 207, 48, 1);
+}
+
+
+.ct > thead > tr > th {
+  border-bottom: 2px solid rgba(87, 155, 226, 1);
+}
+
+.ct > tbody > tr > td {
+  border-bottom: 1px solid rgba(87, 155, 226, 1);
+}
+
+.right {
+	float: right;
+	display: inline-block;
+}
+
+.left {
+	float: left;
+	display: inline-block;
+}
+
+.t {
+	color: rgba(255, 207, 48, 1);
+}
+
+.ct {
+	color: rgba(87, 155, 226, 1);
+}

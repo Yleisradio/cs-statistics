@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/tv.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="tv-container">
+          <div id="team-1-score"></div>
+          <div class="clearfix"></div>
+          <div class="table-wrapper">
+            <table id="team-1-players" class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Tapot</th>
+                  <th>Avustukset</th>
+                  <th>Kuolemat</th>
+                  <th>T/K</th>
+                  <th>Pääosuma %</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+
+          <div id="team-2-score"></div>
+          <div class="clearfix"></div>
+          <div class="table-wrapper">
+            <table id="team-2-players" class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Tapot</th>
+                  <th>Avustukset</th>
+                  <th>Kuolemat</th>
+                  <th>T/K</th>
+                  <th>Pääosuma %</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
+    <script src="../../js/cs.js"></script>
+
+    <script type="text/javascript">
+      cs.getGame(cs.params().id, function(err, game) {
+        $('#team-1-players').addClass(game.teams[0].side);
+        $('#team-2-players').addClass(game.teams[1].side);
+        var playerTemplate = '<tr><td class="name"><%= name %></td><td><%= kills %></td><td><%= assists %></td><td><%= deaths %></td><td><%= cs.getRating(kills, deaths) %></td><td><%= cs.getPercentage(headshots, kills) %></td></tr>';
+        cs.renderArray('#team-1-players tbody', playerTemplate, game.teams[0].players);
+        cs.renderArray('#team-2-players tbody', playerTemplate, game.teams[1].players);
+        var teamTemplate = '<div class="<%= side %> left"><%= name %></div><div class="<%= side %> right"><%= score %></div>';
+        cs.render('#team-1-score', teamTemplate, game.teams[0]);
+        cs.render('#team-2-score', teamTemplate, game.teams[1]);
+      });
+    </script>
+  </body>
+</html>

@@ -7,28 +7,61 @@
 			{
 				"score": 3,
 				"side": "t",
-				"name": "Team Testers",
+				"name": "Testaajat",
 		        "players":[  
-		            {  
+		            {
 		               "score":0,
 		               "id":1,
 		               "assists":1,
 		               "deaths":2,
-		               "name":"Tom",
+		               "name":"Pekka",
 		               "side":"t",
 		               "headshots":0,
 		               "kills":0,
 		               "steamId": "0:1:123456789"
 		            },
-		            {  
+		            {
 		               "score":8,
-		               "id":20,
+		               "id":2,
 		               "assists":0,
 		               "deaths": 0,
-		               "name":"Shawn",
+		               "name":"Jari",
 		               "side":"t",
 		               "headshots":2,
 		               "kills":4,
+		               "steamId": "1:1:123456789"
+		            },
+		            {
+		               "score":0,
+		               "id":3,
+		               "assists":0,
+		               "deaths": 0,
+		               "name":"Marja",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
+		               "steamId": "1:1:123456789"
+		            },
+		            {
+		               "score":0,
+		               "id":4,
+		               "assists":0,
+		               "deaths": 0,
+		               "name":"Ari",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
+		               "steamId": "1:1:123456789"
+		            },
+		            {
+		               "score":0,
+		               "id":5,
+		               "assists":0,
+		               "deaths": 0,
+		               "name":"Taavi",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
 		               "steamId": "1:1:123456789"
 		            }
 		        ]
@@ -36,28 +69,61 @@
 			{
 				"score": 0,
 				"side": "ct",
-				"name": "Nameless",
+				"name": "Voimasamoojat",
 		        "players":[  
 		            {  
 		               "score":0,
-		               "id":3,
+		               "id":6,
 		               "assists":1,
 		               "deaths":2,
-		               "name":"Chris",
+		               "name":"Joona Keski-Jäntti",
 		               "side":"t",
 		               "headshots":0,
 		               "kills":0,
 		               "steamId": "0:1:123456789"
 		            },
-		            {  
+		            {
 		               "score":8,
-		               "id":14,
+		               "id":7,
 		               "assists":0,
 		               "deaths":2,
-		               "name":"John",
+		               "name":"Kalle",
 		               "side":"t",
 		               "headshots":1,
 		               "kills":1,
+		               "steamId": "1:1:123456789"
+		            },
+		            {
+		               "score":0,
+		               "id":0,
+		               "assists":0,
+		               "deaths":0,
+		               "name":"Juha",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
+		               "steamId": "1:1:123456789"
+		            },
+		            {
+		               "score":0,
+		               "id":9,
+		               "assists":0,
+		               "deaths":0,
+		               "name":"Ville",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
+		               "steamId": "1:1:123456789"
+		            },
+		            {
+		               "score":0,
+		               "id":10,
+		               "assists":0,
+		               "deaths":0,
+		               "name":"Tommi",
+		               "side":"t",
+		               "headshots":0,
+		               "kills":0,
 		               "steamId": "1:1:123456789"
 		            }
 		        ]

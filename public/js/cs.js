@@ -3,7 +3,7 @@
 var cs = (function() {
 	function getGames(callback) {
 		$.ajax({
-			url: '../data/games.json',
+			url: '/cs/public/data/games.json',
 			dataType: 'json',
 			method: 'get',
 			error: function(xhr, status, err) {
@@ -17,7 +17,7 @@ var cs = (function() {
 
 	function getGame(id, callback) {
 		$.ajax({
-			url: '../data/games.json',
+			url: '/cs/public/data/games.json',
 			dataType: 'json',
 			method: 'get',
 			error: function(xhr, status, err) {
