@@ -57,7 +57,7 @@
 
     <script type="text/javascript">
       cs.getGame(cs.params().id, function(err, game) {
-        var playerTemplate = '<tr><td><%= name %></td><td><%= kills %></td><td><%= assists %></td><td><%= deaths %></td><td><%= cs.getRating(kills, deaths) %></td><td><%= cs.getPercentage(headshots, kills) %></td><td><%= score %></td></tr>';
+        var playerTemplate = '<tr><td class="name"><%= pseudo %></td><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
         cs.renderArray('#team-1-players', playerTemplate, game.teams[0].players);
         cs.renderArray('#team-2-players', playerTemplate, game.teams[1].players);
         var scoreTemplate = '<%= score %> - <%= name %>';

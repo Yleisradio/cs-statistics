@@ -3,7 +3,7 @@
 var cs = (function() {
 	function getGames(callback) {
 		$.ajax({
-			url: '/cs/public/data/games.json',
+			url: '//localhost:3000/api/matches',
 			dataType: 'json',
 			method: 'get',
 			error: function(xhr, status, err) {
@@ -17,23 +17,15 @@ var cs = (function() {
 
 	function getGame(id, callback) {
 		$.ajax({
-			url: '/cs/public/data/games.json',
+			url: '//localhost:3000/api/match/' + id,
 			dataType: 'json',
 			method: 'get',
 			error: function(xhr, status, err) {
 				callback(err, null);
 			},
 			success: function(games) {
-				var game = _.filter(games, function(game) {
-					return game.id == id;
-				});
-				game = game[0];
-				game.teams = _.map(game.teams, function(team) {
-					team.players = _.sortBy(team.players, function(player) {
-						return -player.score;
-					});
-					return team;
-				});
+				var game = games[0];
+				game = sanitizeGame(game);
 				callback(null, game);
 			}
 		});
@@ -76,7 +68,7 @@ var cs = (function() {
 	}
 
 	function getPercentage(dividend, divisor) {
-		return (getRating(dividend, divisor) * 100) + ' %';
+		return (Math.round(getRating(dividend, divisor) * 100)) + ' %';
 	}
 
 	function params() {
@@ -88,6 +80,30 @@ var cs = (function() {
 	        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
 	    }
 	    return params;
+	}
+
+	function sanitizeGame(game) {
+		game.teams = [{}, {}];
+		var playersByTeam = _.groupBy(game.players, 'team');
+		playersByTeam[0] = _.sortBy(playersByTeam.a, function(player) {
+			return -player.nb_kill;
+		});
+		playersByTeam[1] = _.sortBy(playersByTeam.b, function(player) {
+			return -player.nb_kill;
+		});
+		game.teams[0] = {
+			name: game.team_a_name,
+			players: playersByTeam[0],
+			side: 't',
+			score: game.score_a
+		};
+		game.teams[1] = {
+			name: game.team_b_name,
+			players: playersByTeam[1],
+			side: 'ct',
+			score: game.score_b
+		};
+		return game;
 	}
 
 	return {
