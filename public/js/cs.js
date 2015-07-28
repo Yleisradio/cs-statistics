@@ -6,6 +6,7 @@ var cs = (function() {
 			url: '//localhost:3000/api/matches',
 			dataType: 'json',
 			method: 'get',
+			crossDomain: true,
 			error: function(xhr, status, err) {
 				callback(err, null);
 			},
@@ -20,6 +21,7 @@ var cs = (function() {
 			url: '//localhost:3000/api/match/' + id,
 			dataType: 'json',
 			method: 'get',
+			crossDomain: true,
 			error: function(xhr, status, err) {
 				callback(err, null);
 			},
