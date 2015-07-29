@@ -3,7 +3,7 @@
 var cs = (function() {
 	function getGames(callback) {
 		$.ajax({
-			url: '//localhost:3000/api/matches',
+			url: '//ebot-api.c3t.yle.fi/api/matches',
 			dataType: 'json',
 			method: 'get',
 			crossDomain: true,
@@ -18,7 +18,7 @@ var cs = (function() {
 
 	function getGame(id, callback) {
 		$.ajax({
-			url: '//localhost:3000/api/match/' + id,
+			url: '//ebot-api.c3t.yle.fi/api/match/' + id,
 			dataType: 'json',
 			method: 'get',
 			crossDomain: true,
