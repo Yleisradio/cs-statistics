@@ -1,6 +1,6 @@
 'use strict';
 
-var apiUrl = '//localhost:3000/';
+var apiUrl = '//ebot-api.c3t.yle.fi/';
 
 var cs = (function() {
 	function getGames(callback) {
