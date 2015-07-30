@@ -1,20 +1,23 @@
 body {
-	background-image: url('../img/background-placeholder.png');
-	background-size: cover;
+	background-color: green;
+	color: white;
+	overflow: hidden;
 }
 
 .tv-container {
-	margin: 5%;
+	margin: 4%;
 	color: white;
 }
 
 #team-1-score, .tv-container #team-2-score {
 	font-size: 60px;
+	line-height: 60px;
 }
 
-.table-wrapper {
-	background: black;
-	padding: 10px;
+.box {
+	background: #00B4C8;
+	padding: 30px;
+	margin-bottom: 50px;
 }
 
 .table-wrapper .table {
@@ -43,20 +46,16 @@ body {
 	text-align: left;
 }
 
-.t > thead > tr > th {
-  border-bottom: 2px solid rgba(255, 207, 48, 1);
+.table > thead > tr > th {
+  border-bottom: 1px solid black;
 }
 
-.t > tbody > tr > td {
-  border-bottom: 1px solid rgba(255, 207, 48, 1);
+.table > tbody > tr > td {
+  border-bottom: 1px solid black;
 }
 
-.ct > thead > tr > th {
-  border-bottom: 2px solid rgba(87, 155, 226, 1);
-}
-
-.ct > tbody > tr > td {
-  border-bottom: 1px solid rgba(87, 155, 226, 1);
+.table > tbody > tr:last-child > td {
+  border-bottom: 0;
 }
 
 .right {
@@ -67,12 +66,4 @@ body {
 .left {
 	float: left;
 	display: inline-block;
-}
-
-.t {
-	color: rgba(255, 207, 48, 1);
-}
-
-.ct {
-	color: rgba(87, 155, 226, 1);
 }
