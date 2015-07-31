@@ -87,6 +87,12 @@ var cs = (function() {
 
 	function sanitizeGame(game) {
 		game.teams = [{}, {}];
+		game.players = _.map(game.players, function(player) {
+			if(player.pseudo.indexOf('natu') > -1) {
+				player.pseudo = 'natu';
+			}
+			return player;
+		});
 		var playersByTeam = _.groupBy(game.players, 'team');
 		playersByTeam[0] = _.sortBy(playersByTeam.a, function(player) {
 			return -player.nb_kill;
