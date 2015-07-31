@@ -27,8 +27,7 @@ var cs = (function() {
 			error: function(xhr, status, err) {
 				callback(err, null);
 			},
-			success: function(games) {
-				var game = games[0];
+			success: function(game) {
 				game = sanitizeGame(game);
 				callback(null, game);
 			}
