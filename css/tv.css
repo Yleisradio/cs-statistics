@@ -21,6 +21,7 @@ body {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	background: url('../img/tausta.jpg');
 }
 
 .table-wrapper .table {
