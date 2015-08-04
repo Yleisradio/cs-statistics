@@ -1,6 +1,6 @@
 'use strict';
 
-var apiUrl = '//ebot-api.c3t.yle.fi/';
+var apiUrl = '//ebot-api.c3t.yle.fi/'; //REPLACE THIS WITH YOUR API URL
 
 var cs = (function() {
 	function getGames(callback) {
@@ -87,12 +87,6 @@ var cs = (function() {
 
 	function sanitizeGame(game) {
 		game.teams = [{}, {}];
-		game.players = _.map(game.players, function(player) {
-			if(player.pseudo.indexOf('natu') > -1) {
-				player.pseudo = 'natu';
-			}
-			return player;
-		});
 		var playersByTeam = _.groupBy(game.players, 'team');
 		playersByTeam[0] = _.sortBy(playersByTeam.a, function(player) {
 			return -player.nb_kill;
