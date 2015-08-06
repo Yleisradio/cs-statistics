@@ -4,8 +4,7 @@ This repository includes an example user interface that can be used to show CS:G
 
 ## Requirements
 
-esports-ebot-api
-https://github.com/Yleisradio/esports-ebot-api
+esports-ebot-api https://github.com/Yleisradio/esports-ebot-api
 
 ## Installation
 
@@ -19,6 +18,10 @@ https://github.com/Yleisradio/esports-ebot-api
 - The game.html is an example view that can be used to show game statistics in the web.
 
 ![](https://github.com/Zeikko/cs-statistics/blob/master/img/statistics-example.png)
+
+## Live Demo
+
+http://data.yle.fi/cs-statistics/html/games.html
 
 ## Contribution
 
