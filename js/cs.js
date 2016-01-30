@@ -34,6 +34,39 @@ var cs = (function() {
 		});
 	}
 
+	function getPlayers(callback) {
+		$.ajax({
+			url: apiUrl + 'api/playersummary',
+			dataType: 'json',
+			method: 'get',
+			crossDomain: true,
+			error: function(xhr, status, err) {
+				callback(err, null);
+			},
+			success: function(players) {
+				players = _.sortBy(players, function(player) {
+					return -player.nb_kill
+				})
+				callback(null, players);
+			}
+		});
+	}
+
+	function getPlayer(id, callback) {
+		$.ajax({
+			url: apiUrl + 'api/player/' + id,
+			dataType: 'json',
+			method: 'get',
+			crossDomain: true,
+			error: function(xhr, status, err) {
+				callback(err, null);
+			},
+			success: function(player) {
+				callback(null, player[0] || []);
+			}
+		});
+	}
+
 	function renderArray(target, template, data) {
 			var html = '';
 			var compiled = _.template(template);
@@ -87,6 +120,12 @@ var cs = (function() {
 
 	function sanitizeGame(game) {
 		game.teams = [{}, {}];
+		game.players = _.map(game.players, function(player) {
+			if(player.players_snapshot.length) {
+				player.player_id = player.players_snapshot[0].player_id;
+			}
+			return player;
+		});
 		var playersByTeam = _.groupBy(game.players, 'team');
 		playersByTeam[0] = _.sortBy(playersByTeam.a, function(player) {
 			return -player.nb_kill;
@@ -117,6 +156,8 @@ var cs = (function() {
 		countPlayers: countPlayers,
 		getRating: getRating,
 		getPercentage: getPercentage,
-		params: params
+		params: params,
+		getPlayer: getPlayer,
+		getPlayers: getPlayers
 	}
 })()

@@ -71,3 +71,8 @@ body {
 .ct {
 	color: rgba(87, 155, 226, 1);
 }
+
+a, a:focus, a:visited {
+	color: inherit;
+	text-decoration: none;
+}
