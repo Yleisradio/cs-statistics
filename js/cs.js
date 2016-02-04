@@ -1,11 +1,11 @@
 'use strict';
 
-var apiUrl = '//ebot-api.c3.yle.fi/'; //REPLACE THIS WITH YOUR API URL
+var apiUrl = '//esports-ebot-api-test.c3t.yle.fi/'; //REPLACE THIS WITH YOUR API URL
 
 var cs = (function() {
-	function getGames(callback) {
+	function getGames(season, callback) {
 		$.ajax({
-			url: apiUrl + 'api/matches',
+			url: apiUrl + 'api/matches/' + season,
 			dataType: 'json',
 			method: 'get',
 			crossDomain: true,
@@ -34,6 +34,25 @@ var cs = (function() {
 		});
 	}
 
+	function getPlayerGame(matchId, playerId, callback) {
+		$.ajax({
+			url: apiUrl + 'api/match/' + matchId,
+			dataType: 'json',
+			method: 'get',
+			crossDomain: true,
+			error: function(xhr, status, err) {
+				callback(err, null);
+			},
+			success: function(game) {
+				game = sanitizeGame(game);
+				var player = _.find(game.players, function(player) {
+					return player.id == playerId;
+				})
+				callback(null, player);
+			}
+		});
+	}
+
 	function getPlayers(callback) {
 		$.ajax({
 			url: apiUrl + 'api/playersummary',
@@ -54,7 +73,7 @@ var cs = (function() {
 
 	function getPlayer(id, callback) {
 		$.ajax({
-			url: apiUrl + 'api/player/' + id,
+			url: apiUrl + 'api/playersummary/' + id,
 			dataType: 'json',
 			method: 'get',
 			crossDomain: true,
@@ -62,7 +81,22 @@ var cs = (function() {
 				callback(err, null);
 			},
 			success: function(player) {
-				callback(null, player[0] || []);
+				callback(null, player);
+			}
+		});
+	}
+
+	function getSeasons(callback) {
+		$.ajax({
+			url: apiUrl + 'api/seasons',
+			dataType: 'json',
+			method: 'get',
+			crossDomain: true,
+			error: function(xhr, status, err) {
+				callback(err, null);
+			},
+			success: function(seasons) {
+				callback(null, seasons);
 			}
 		});
 	}
@@ -158,6 +192,8 @@ var cs = (function() {
 		getPercentage: getPercentage,
 		params: params,
 		getPlayer: getPlayer,
-		getPlayers: getPlayers
+		getPlayers: getPlayers,
+		getSeasons: getSeasons,
+		getPlayerGame: getPlayerGame
 	}
 })()

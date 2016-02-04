@@ -16,7 +16,7 @@
 <body class="player">
   <div class="tv-container">
     <div class="box">
-      <div class="title">Tournament Statistics: <span id="nick"></span></div>
+      <div class="title">Tournament: <span id="nick"></span></div>
       <table id="player" class="table">
         <thead>
           <tr>
@@ -39,8 +39,7 @@
   <script type="text/javascript">
   function update() {
     cs.getPlayer(cs.params().id, function(err, player) {
-      console.log(player);
-      var playerTemplate = '<tr><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
+      var playerTemplate = '<tr><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
       cs.render('#player tbody', playerTemplate, player);
       $('#nick').html(player.pseudo);
     });

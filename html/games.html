@@ -40,7 +40,7 @@
 
     <script type="text/javascript">
       moment.locale('en');
-      cs.getGames(function(err, data) {
+      cs.getGames(cs.params().season, function(err, data) {
         cs.renderArray('#game-data', '<tr><td><a class="btn btn-primary" href="game.html?id=<%= id %>">View</a><a class="btn btn-primary" href="tv/game.html?id=<%= id %>">TV</a></td><td><%= id %></td><td><%= moment(startdate).format("D.M.YYYY HH:mm") %></td><td><%= team_a_name %></td><td><%= score_a %> - <%= score_b %></td><td><%= team_b_name %></td></tr>', data);
     });
     </script>
