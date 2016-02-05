@@ -162,7 +162,7 @@ var cs = (function() {
 			return player;
 		});
 		game.players = _.filter(game.players, function(player) {
-			return player.steamid !== 'STEAM_1:1:86073' && player.steamid !== 'STEAM_1:1:6028989'
+			return player.steamid !== 'STEAM_1:1:86073' && player.steamid !== 'STEAM_1:1:6028989' && player.steamid !== 'STEAM_1:1:101795238' && player.steamid !== 'STEAM_1:1:3508811'
 		})
 		var playersByTeam = _.groupBy(game.players, 'team');
 		playersByTeam[0] = _.sortBy(playersByTeam.a, function(player) {
