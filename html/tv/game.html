@@ -44,7 +44,7 @@
               <thead>
                 <tr>
                   <th></th>
-                  <th>Frags</th>
+                  <th>Kills</th>
                   <th>Assists</th>
                   <th>Deaths</th>
                   <th>K/D</th>
@@ -65,9 +65,10 @@
     <script type="text/javascript">
     function update() {
         cs.getGame(cs.params().id, function(err, game) {
+          console.log(game)
           $('#team-1-players').addClass(game.teams[0].side);
           $('#team-2-players').addClass(game.teams[1].side);
-          var playerTemplate = '<tr><td class="name"><a href="player_game.html?game=<%= match_id %>&id=<%= player_id %>"><%= pseudo %></a></td><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
+          var playerTemplate = '<tr><td class="name"><a href="player_game.html?season=<%= season_id %>&game=<%= match_id %>&steamid=<%= steamid %>&id=<%= player_id %>"><%= pseudo %></a></td><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
           cs.renderArray('#team-1-players tbody', playerTemplate, game.teams[0].players);
           cs.renderArray('#team-2-players tbody', playerTemplate, game.teams[1].players);
           var teamTemplate = '<div class="<%= side %> left"><%= name %></div><div class="<%= side %> right"><%= score %></div>';

@@ -1,6 +1,6 @@
 'use strict';
 
-var apiUrl = '//esports-ebot-api-test.c3t.yle.fi/'; //REPLACE THIS WITH YOUR API URL
+var apiUrl = '//esports-ebot-api-production.c3.yle.fi/'; //REPLACE THIS WITH YOUR API URL
 
 var cs = (function() {
 	function getGames(season, callback) {
@@ -71,9 +71,9 @@ var cs = (function() {
 		});
 	}
 
-	function getPlayer(id, callback) {
+	function getPlayer(id, season, callback) {
 		$.ajax({
-			url: apiUrl + 'api/playersummary/' + id,
+			url: apiUrl + 'api/playersummary/' + season + '/' + id,
 			dataType: 'json',
 			method: 'get',
 			crossDomain: true,
@@ -157,6 +157,7 @@ var cs = (function() {
 		game.players = _.map(game.players, function(player) {
 			if(player.players_snapshot.length) {
 				player.player_id = player.players_snapshot[0].player_id;
+				player.season_id = game.season_id
 			}
 			return player;
 		});

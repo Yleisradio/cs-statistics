@@ -86,3 +86,11 @@ a, a:focus, a:visited, a:hover {
 	color: inherit;
 	text-decoration: none;
 }
+
+.player .box {
+	padding: 10px 10px 5px 10px;
+}
+
+.player .tv-container {
+	margin: 3.3%;
+}
