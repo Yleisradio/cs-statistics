@@ -132,7 +132,7 @@ var cs = (function() {
 			return 0;
 		}
 		if(divisor === 0) {
-			return 1;
+			return '-';
 		}
 		return Math.round(dividend / divisor * 100) / 100;
 	}
