@@ -5,18 +5,20 @@ body {
 }
 
 .tv-container {
-	margin: 4%;
+	margin: 5%;
+	
 	color: white;
 }
 
 #team-1-score, .tv-container #team-2-score, .title {
-	font-size: 60px;
-	line-height: 60px;
+	font-size: 30px;
+	line-height: 50px;
 }
 
 .box {
+	margin: 10px, 0px;
 	background: #00B4C8;
-	padding: 30px;
+	padding: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -24,28 +26,38 @@ body {
 }
 
 .table-wrapper .table {
-	margin: 0;
+	margin: 0%;
 }
 
 .tv-container .table th, .tv-container .table td {
 	text-align: center;
 }
 
+.tv-container .inline th, .tv-container .table td {
+	text-align: center;
+}
+
+
 .table th {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 .tv-container .table td {
-	font-size: 30px;
-	line-height: 30px;
+	font-size: 20px;
+	line-height: 20px;
 }
 
 .table .name {
-	font-size: 30px;
-	line-height: 30px;
+	font-size: 20px;
+	line-height: 20px;
 	width: 400px;
+	text-align: left;
+}
+
+table.left
+{
 	text-align: left;
 }
 
@@ -61,18 +73,78 @@ body {
   border-bottom: 0;
 }
 
+
+table.inline
+{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: left;
+	float: center;
+}
+
+table.inline.left
+{
+
+	text-align: left;
+}
+
+table.inline.right
+{
+
+	text-align: right;
+}
+.big
+{
+
+	line-height: 350%;
+	text-indent: 0px;
+}
+
+
+
 .right {
+	font-weight: bold;
 	float: right;
 	display: inline-block;
 }
 
 .left {
+	letter-spacing: 2px;
 	float: left;
 	display: inline-block;
 }
 
+.statScore
+{
+	display: block;
+	font-size: 30px;
+	margin: 0px;
+	border: 0px;
+	padding-top: 0px;
+	margin-left: 10px;
+	line-height: 0.4;
+}
+
+.inline.nobold
+{
+	font-weight: normal;
+}
+
+.statScore.bottom
+{
+	position: relative;
+	bottom: 10px;
+}
+
+.statScore.upper
+{
+	position: relative;
+	top: 30px;
+}
+
 .game .box {
-	margin-bottom: 50px;
+	margin-bottom: 0px;
 }
 
 .player .tv-container {
@@ -88,9 +160,98 @@ a, a:focus, a:visited, a:hover {
 }
 
 .player .box {
-	padding: 10px 10px 5px 10px;
+	padding: 5px 10px 2px 10px;
 }
 
 .player .tv-container {
-	margin: 3.3%;
+	margin: 0%;
 }
+
+.stat-box {
+	text-align: left;
+	background: #00B4C8;
+	padding: 5px;
+	padding-bottom: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 0px;
+	background: url('../img/background.jpg');
+	margin: 30px 0px;
+}
+.table-wrapper.tbody
+{
+	text-align: center;
+}
+
+
+
+img {
+    max-width: 100%;
+    margin-left: 10%;
+}
+
+.b 
+{
+	position: relative;
+	bottom: -50px;
+	
+}
+
+
+.a
+{
+	 text-align: center;
+	position: relative;
+	top: -30px;
+}
+
+
+
+hr {
+	display: block;
+	position: relative;
+	top: 90px;
+	border-bottom: 5px solid;
+	border-color: #000066;
+    border: 1;
+    height: 0; 
+    box-shadow: 0 0 10px 1px blue;
+}
+hr:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+
+
+div.score-header
+{
+	display: block;
+	position: relative;
+	top: 20px;
+	font-size: 30px;
+	margin: 0px;
+	border: 0px;
+	padding-top: 0px;
+	margin-left: 10px;
+	line-height: 0.4;
+}
+
+div.vline
+{
+	position: relative;
+	bottom: 10px;
+	display: block;
+	border-bottom: 5px solid;
+	border-color: #000066;
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px blue;
+	height:150px;
+}
+
+div.move
+{
+	display: block;
+	position: relative;
+	top: 20px;
+}
+
