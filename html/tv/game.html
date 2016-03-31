@@ -40,7 +40,6 @@
 
 
         <div class="stat-box">
-        <div class="score-header"> Erä-kohtaiset tulokset </div>
           <div class="upper right statScore" id="stat-score-a"></div>
           <div class="table-wrapper">
           <hr size="1000">
@@ -62,19 +61,6 @@
             </table>
             <div class="bottom right statScore" id="stat-score-b"></div>
             <div class="clearfix"></div>
-
-            <!-- EXPLANATION TEST, ASK!!-->
-
-            <table class="inline nobold">
-               <tr>
-                <td>
-                Normal:
-                </td>
-                <td>
-                <img src="../../img/normal.png">
-                </td>
-              </tr>
-            </table>
 
 
 
@@ -123,8 +109,6 @@
           cs.renderArray('#team-1-players tbody', playerTemplate, game.teams[0].players);
           cs.renderArray('#team-2-players tbody', playerTemplate, game.teams[1].players);
           var teamTemplate = '<div class="<%= side %> left"><%= name %></div><div class="<%= side %> right"><%= score %></div>';
-          cs.render('#team-1-score', teamTemplate, game.teams[0]);
-          cs.render('#team-2-score', teamTemplate, game.teams[1]);
                 
           
           cs.renderArray(

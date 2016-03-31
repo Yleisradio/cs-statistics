@@ -45,8 +45,8 @@ body {
 }
 
 .tv-container .table td {
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 35px;
+	line-height: 25px;
 }
 
 .table .name {
@@ -81,6 +81,7 @@ table.inline
 	font-size: 30px;
 	text-align: left;
 	float: center;
+	padding-left: 10px;
 }
 
 table.inline.left
@@ -124,6 +125,7 @@ table.inline.right
 	padding-top: 0px;
 	margin-left: 10px;
 	line-height: 0.4;
+	padding-right: 10px;
 }
 
 .inline.nobold
@@ -134,13 +136,12 @@ table.inline.right
 .statScore.bottom
 {
 	position: relative;
-	bottom: 10px;
+	bottom: 50px;
 }
 
 .statScore.upper
 {
-	position: relative;
-	top: 30px;
+	margin-top: 60px;
 }
 
 .game .box {
@@ -211,11 +212,7 @@ hr {
 	display: block;
 	position: relative;
 	top: 90px;
-	border-bottom: 5px solid;
-	border-color: #000066;
-    border: 1;
-    height: 0; 
-    box-shadow: 0 0 10px 1px blue;
+	border-color: black;
 }
 hr:after {  /* Not really supposed to work, but does */
     content: "\00a0";  /* Prevent margin collapse */
@@ -240,12 +237,8 @@ div.vline
 	position: relative;
 	bottom: 10px;
 	display: block;
-	border-bottom: 5px solid;
-	border-color: #000066;
-    border: 0;
-    height: 0; /* Firefox... */
-    box-shadow: 0 0 10px 1px blue;
-	height:150px;
+	border-left: thin solid black;
+	height: 150px;
 }
 
 div.move
