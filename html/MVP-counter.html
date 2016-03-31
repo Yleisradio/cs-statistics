@@ -46,11 +46,34 @@
 
       var round_summaries =  _.map(data.round_summary, function(round_summary) {
           var playerName = round_summary.best_action_param
-          playerName = playerName.split('"');
+           playerName = playerName.split('"');
            playerName = playerName[ playerName.length - 2 ]
            round_summary.playerName = playerName
+
+           if(round_summary.best_action_type == "3kill")
+           {
+            round_summary.best_action_type = "3 Kills"
+           }
+
+           if(round_summary.best_action_type == "2kill")
+           {
+            round_summary.best_action_type = "2 Kills"
+           }
+           
+          if(round_summary.best_action_type == "4kill")
+           {
+            round_summary.best_action_type = "4 Kills"
+           }
+
+           if(round_summary.best_action_type == "1kill")
+           {
+            round_summary.best_action_type = "1 Kill"
+           }
+
            return round_summary
            })
+
+
 
         cs.renderArray('#MVP-table', '<tr><td></td><td><%= best_action_type %></td><td><%= best_killer %></td><td><%= playerName %></td><td><%= round_id %></td></tr>', round_summaries);
 
