@@ -15,7 +15,6 @@ body {
 }
 
 .box {
-	margin: 10px, 0px;
 	background: #00B4C8;
 	padding: 5px;
 	-webkit-border-radius: 5px;
@@ -155,7 +154,7 @@ a, a:focus, a:visited, a:hover {
 }
 
 .player .tv-container {
-	margin: 0%;
+	margin: 4%;
 }
 
 .stat-box {
