@@ -4,7 +4,7 @@ This repository includes an example user interface that can be used to show CS:G
 
 ## Requirements
 
-esports-ebot-api https://github.com/Yleisradio/esports-ebot-api
+esports-ebot-api https://github.com/Yleisradio/yle-esports-ebot-api
 
 ## Installation
 
