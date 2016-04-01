@@ -42,6 +42,9 @@
       var playerTemplate = '<tr><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
       cs.render('#player tbody', playerTemplate, player);
       $('#nick').html('<a href="player.html?season=' + cs.params().season + '&steamid=' + cs.params().steamid + '">' + player.pseudo + '</a>');
+
+      console.log(player.nb_kill)
+
     });
   }
   update();

@@ -19,6 +19,7 @@ body {
 	margin: 10px, 0px;
 	background: #00B4C8;
 	padding: 5px;
+	padding-bottom: 10px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -214,8 +215,8 @@ hr {
 	top: 90px;
 	border-color: black;
 }
-hr:after {  /* Not really supposed to work, but does */
-    content: "\00a0";  /* Prevent margin collapse */
+hr:after {  
+    content: "\00a0";  
 }
 
 
