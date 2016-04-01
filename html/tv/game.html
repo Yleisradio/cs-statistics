@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/tv.css" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -13,7 +11,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-
   <body class="game">
     <div class="tv-container">
         <div class="box">
@@ -36,9 +33,6 @@
             </table>
           </div>
         </div>
-
-
-
         <div class="stat-box">
           <div class="upper right statScore" id="stat-score-a"></div>
           <div class="table-wrapper">
@@ -61,9 +55,6 @@
             </table>
             <div class="bottom right statScore" id="stat-score-b"></div>
             <div class="clearfix"></div>
-
-
-
             </div>
         </div>
         <div class="box">
@@ -87,9 +78,7 @@
           </div>
         </div>
     </div>
-
     </body>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -99,13 +88,9 @@
     <script type="text/javascript">
     function update() {
         cs.getGame(cs.params().id, function(err, game) {
-         
-
           $('#team-1-players').addClass(game.teams[0].side);
           $('#team-2-players').addClass(game.teams[1].side);
-
-
-          var playerTemplate = '<tr><td class="name"><a href="player_game.html?season=<%= season_id %>&game=<%= match_id %>&steamid=<%= steamid %>&id=<%= player_id %>"><%= pseudo %></a></td><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
+           var playerTemplate = '<tr><td class="name"><a href="player_game.html?season=<%= season_id %>&game=<%= match_id %>&steamid=<%= steamid %>&id=<%= player_id %>"><%= pseudo %></a></td><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
           cs.renderArray('#team-1-players tbody', playerTemplate, game.teams[0].players);
           cs.renderArray('#team-2-players tbody', playerTemplate, game.teams[1].players);
           var teamTemplate = '<div class="<%= side %> left"><%= name %></div><div class="<%= side %> right"><%= score %></div>';
@@ -115,7 +100,6 @@
           '#round-stats tbody ', '<td><div class="vline"></div></td><td> &nbsp;<img class ="<%= team_win %>" align="middle" src="../../img/<%= win_type %>.png">&nbsp;&nbsp;</td>', game.round_summary);
 
           cs.render( '#name1 tbody', '<%= team_a_name %>&nbsp;<br><br><%= team_b_name %>&nbsp;', game);
-
           cs.render( '#stat-score-a', '<%= score %>', game.teams[0])
           cs.render( '#stat-score-b', '<%= score %>', game.teams[1])
 
