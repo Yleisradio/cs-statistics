@@ -5,8 +5,7 @@ body {
 }
 
 .tv-container {
-	margin: 5%;
-	
+	margin: 4%;
 	color: white;
 }
 
@@ -19,7 +18,6 @@ body {
 	margin: 10px, 0px;
 	background: #00B4C8;
 	padding: 5px;
-	padding-bottom: 10px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -57,8 +55,7 @@ body {
 	text-align: left;
 }
 
-table.left
-{
+table.left {
 	text-align: left;
 }
 
@@ -75,8 +72,7 @@ table.left
 }
 
 
-table.inline
-{
+table.inline {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 30px;
@@ -85,19 +81,16 @@ table.inline
 	padding-left: 10px;
 }
 
-table.inline.left
-{
+table.inline.left {
 
 	text-align: left;
 }
 
-table.inline.right
-{
+table.inline.right {
 
 	text-align: right;
 }
-.big
-{
+.big {
 
 	line-height: 350%;
 	text-indent: 0px;
@@ -117,8 +110,7 @@ table.inline.right
 	display: inline-block;
 }
 
-.statScore
-{
+.statScore {
 	display: block;
 	font-size: 30px;
 	margin: 0px;
@@ -129,19 +121,16 @@ table.inline.right
 	padding-right: 10px;
 }
 
-.inline.nobold
-{
+.inline.nobold {
 	font-weight: normal;
 }
 
-.statScore.bottom
-{
+.statScore.bottom {
 	position: relative;
 	bottom: 50px;
 }
 
-.statScore.upper
-{
+.statScore.upper {
 	margin-top: 60px;
 }
 
@@ -180,34 +169,28 @@ a, a:focus, a:visited, a:hover {
 	background: url('../img/background.jpg');
 	margin: 30px 0px;
 }
-.table-wrapper.tbody
-{
+
+.table-wrapper.tbody {
 	text-align: center;
 }
-
-
 
 img {
     max-width: 100%;
     margin-left: 10%;
 }
 
-.b 
-{
+.b {
 	position: relative;
 	bottom: -50px;
 	
 }
 
 
-.a
-{
+.a {
 	 text-align: center;
 	position: relative;
 	top: -30px;
 }
-
-
 
 hr {
 	display: block;
@@ -215,13 +198,12 @@ hr {
 	top: 90px;
 	border-color: black;
 }
-hr:after {  
-    content: "\00a0";  
+
+hr:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
 }
 
-
-div.score-header
-{
+div.score-header {
 	display: block;
 	position: relative;
 	top: 20px;
@@ -233,8 +215,7 @@ div.score-header
 	line-height: 0.4;
 }
 
-div.vline
-{
+div.vline {
 	position: relative;
 	bottom: 10px;
 	display: block;
@@ -242,10 +223,8 @@ div.vline
 	height: 150px;
 }
 
-div.move
-{
+div.move {
 	display: block;
 	position: relative;
 	top: 20px;
 }
-
