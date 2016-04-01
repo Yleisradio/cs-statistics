@@ -90,22 +90,16 @@
         cs.getGame(cs.params().id, function(err, game) {
           $('#team-1-players').addClass(game.teams[0].side);
           $('#team-2-players').addClass(game.teams[1].side);
-           var playerTemplate = '<tr><td class="name"><a href="player_game.html?season=<%= season_id %>&game=<%= match_id %>&steamid=<%= steamid %>&id=<%= player_id %>"><%= pseudo %></a></td><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
+          var playerTemplate = '<tr><td class="name"><a href="player_game.html?season=<%= season_id %>&game=<%= match_id %>&steamid=<%= steamid %>&id=<%= player_id %>"><%= pseudo %></a></td><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
+
           cs.renderArray('#team-1-players tbody', playerTemplate, game.teams[0].players);
-          cs.renderArray('#team-2-players tbody', playerTemplate, game.teams[1].players);
-          var teamTemplate = '<div class="<%= side %> left"><%= name %></div><div class="<%= side %> right"><%= score %></div>';
-                
-          
+          cs.renderArray('#team-2-players tbody', playerTemplate, game.teams[1].players);                        
           cs.renderArray(
           '#round-stats tbody ', '<td><div class="vline"></div></td><td> &nbsp;<img class ="<%= team_win %>" align="middle" src="../../img/<%= win_type %>.png">&nbsp;&nbsp;</td>', game.round_summary);
-
           cs.render( '#name1 tbody', '<%= team_a_name %>&nbsp;<br><br><%= team_b_name %>&nbsp;', game);
           cs.render( '#stat-score-a', '<%= score %>', game.teams[0])
           cs.render( '#stat-score-b', '<%= score %>', game.teams[1])
-
-
           
-
         });
     }
     update();
