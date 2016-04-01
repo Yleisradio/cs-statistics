@@ -1,6 +1,6 @@
 'use strict';
 
-var apiUrl = '//esports-ebot-api-production.c3.yle.fi/'; //REPLACE THIS WITH YOUR API URL
+var apiUrl = '//esports-api-production.c3.yle.fi/'; //REPLACE THIS WITH YOUR API URL
 
 var cs = (function() {
 	function getGames(season, callback) {
