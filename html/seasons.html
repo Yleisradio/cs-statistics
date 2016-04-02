@@ -41,7 +41,7 @@
       moment.locale('en');
       cs.getSeasons(function(err, data) {
         cs.renderArray('#season-data', '<tr><td><a class="btn btn-primary" href="games.html?season=<%= id %>">View</a></td><td><%= id %></td><td><%= name %></td><td><%= event %></td><td><%= matchs.length %></td></tr>', data);
-      });
+    });
     </script>
   </body>
 </html>
