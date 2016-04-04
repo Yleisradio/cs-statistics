@@ -25,6 +25,7 @@
             <th>Kuolemat</th>
             <th>F/K</th>
             <th>Pääosuma %</th>
+            <th>MVP count</th>
           </tr>
         </thead>
         <tbody>
@@ -35,17 +36,77 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.9.3/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/async/1.5.2/async.js"></script>
   <script src="../../js/cs.js"></script>
   <script type="text/javascript">
+
   function update() {
-    cs.getPlayer(cs.params().steamid, cs.params().season, function(err, player) {
-      var playerTemplate = '<tr><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td></tr>';
-      cs.render('#player tbody', playerTemplate, player);
-      $('#nick').html(player.nick);
-    });
-  }
+    var MVPCount = 0
+    var matchIds
+    var MVPIndex
+      cs.getPlayer(cs.params().steamid, cs.params().season, function(err, player) {
+
+        cs.getSeasons(function(err, season_data){
+
+          var season_info =  _.find(season_data, function(season) 
+            {
+               if(season.id == cs.params().season)
+                {
+                  return season
+                }
+            })
+          matchIds = _.map(season_info.matchs, function(matchIds)
+          {
+            return matchIds.id
+
+          })
+
+
+            var gamesData = []
+            async.each(matchIds, function(game_id, callback) 
+            {
+             cs.getGame(game_id, function(err, data)
+              {
+                gamesData.push(data)
+                callback(err, data)
+              })
+            },
+            function(err)
+            {
+              _.forEach(gamesData, function(games)
+              {
+                MVPIndex = _.map(games.round_summary, function(gamesData)
+                {
+                  var playerName = gamesData.best_action_param
+                  playerName = playerName.split('"');
+                  playerName = playerName[ playerName.length - 2 ]
+                   gamesData = playerName
+                  if(!_.isUndefined(gamesData))
+                  {
+                   return gamesData
+                  }
+                })
+              })
+              _.forEach(MVPIndex, function(allMvp)
+              {
+                if( allMvp == player.nick )
+                {
+                   MVPCount = MVPCount + 1
+                }
+              })
+              player.MVPCount = MVPCount 
+              var playerTemplate = '<tr><td><%= nb_kill %></td><td><%= assist %></td><td><%= death %></td><td><%= cs.getRating(nb_kill, death) %></td><td><%= cs.getPercentage(hs, nb_kill) %></td><td> <%= MVPCount %></tr>';
+              cs.render('#player tbody', playerTemplate, player);
+              $('#nick').html(player.nick);
+            })
+      
+         })
+
+      })
+  } 
   update();
   window.setInterval(update, 15 * 1000);
+
   </script>
 </body>
 

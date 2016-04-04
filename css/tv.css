@@ -10,8 +10,8 @@ body {
 }
 
 #team-1-score, .tv-container #team-2-score, .title {
-	font-size: 60px;
-	line-height: 60px;
+	font-size: 40px;
+	line-height: 40px;
 }
 
 .box {
@@ -34,7 +34,7 @@ body {
 .table th {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 25px;
 }
 
 .tv-container .table td {
