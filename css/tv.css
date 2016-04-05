@@ -5,19 +5,23 @@ body {
 }
 
 .tv-container {
-	margin: 4%;
+	margin-bottom: 5%;
+	margin-right: 4%;
+	margin-left: 4%;
+	margin-top: 3%;
 	color: white;
 }
 
 #team-1-score, .tv-container #team-2-score, .title {
-	font-size: 30px;
-	line-height: 50px;
+	font-size: 40px;
+	line-height: 40px;
 }
 
 .box {
 	margin: 10px, 0px;
 	background: #00B4C8;
-	padding: 5px;
+	padding: 30px;
+	padding-bottom: 15px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -28,11 +32,12 @@ body {
 	margin: 0%;
 }
 
-.tv-container .table th, .tv-container .table td {
-	text-align: center;
+.player {
+
+	font-size: 80px;
 }
 
-.tv-container .inline th, .tv-container .table td {
+.tv-container .table th, .tv-container .table td {
 	text-align: center;
 }
 
@@ -44,8 +49,8 @@ body {
 }
 
 .tv-container .table td {
-	font-size: 35px;
-	line-height: 25px;
+	font-size: 30px;
+	line-height: 30px;
 }
 
 .table .name {
@@ -135,7 +140,7 @@ table.inline.right {
 }
 
 .game .box {
-	margin-bottom: 0px;
+	margin: 50px, 0px;
 }
 
 .player .tv-container {
@@ -151,18 +156,18 @@ a, a:focus, a:visited, a:hover {
 }
 
 .player .box {
-	padding: 5px 10px 2px 10px;
+	padding: 10px 10px 5px 10px;
 }
 
 .player .tv-container {
-	margin: 0%;
+	margin: 3.3%;
 }
 
 .stat-box {
 	text-align: left;
 	background: #00B4C8;
 	padding: 5px;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 0px;
