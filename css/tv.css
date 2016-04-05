@@ -27,6 +27,11 @@ body {
 	margin: 0;
 }
 
+.player {
+
+	font-size: 80px;
+}
+
 .tv-container .table th, .tv-container .table td {
 	text-align: center;
 }
@@ -34,12 +39,12 @@ body {
 .table th {
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 35px;
 }
 
 .tv-container .table td {
-	font-size: 30px;
-	line-height: 30px;
+	font-size: 35px;
+	line-height: 35px;
 }
 
 .table .name {
@@ -93,4 +98,8 @@ a, a:focus, a:visited, a:hover {
 
 .player .tv-container {
 	margin: 3.3%;
+}
+
+hr {
+	border-color: black;
 }
